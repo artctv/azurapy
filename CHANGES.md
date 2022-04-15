@@ -1,14 +1,6 @@
+## Unreleased
+
 ## v0.0.2 (2022-04-15)
-
-### Refactor
-
-- add local def stuff for devel to gitignore
-
-### Perf
-
-- configure commitizen tool
-
-## v0.0.1 (2022-04-15)
 
 ### Refactor
 
