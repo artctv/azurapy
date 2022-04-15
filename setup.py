@@ -18,18 +18,17 @@ setup(
     author='Artem `artctv`',
     author_email='artctvcode@gmail.com',
     url='https://github.com/artctv/azurapy',
-    download_url="https://github.com/artctv/azurapy/archive/refs/tags/0.0.1.tar.gz",
+    download_url='https://github.com/artctv/azurapy/archive/refs/tags/0.0.1.tar.gz',
     # project_urls={  # Optional
     #     "Bug Tracker": ""
     # },
-    install_requires=[],  # list all packages that your package uses
-    keywords=["pypi", "azurapy"],  # descriptive meta-data
+    install_requires=['httpx>=0.22.0'],  # list all packages that your package uses
+    keywords=['pypi', 'azurapy'],  # descriptive meta-data
     classifiers=[  # https://pypi.org/classifiers
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Documentation',
         'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
