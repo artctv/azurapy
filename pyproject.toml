@@ -14,7 +14,7 @@ commitizen = "^2.23.0"
 
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "0.0.1"
+version = "0.0.2"
 tag_format = "v$version"
 
 [build-system]
