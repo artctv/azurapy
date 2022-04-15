@@ -17,6 +17,11 @@
 ## python version
 .python-version
 
+## packaging
+*.egg-info/
+build/
+dist/
+
 # IDE/Code specific
 .idea
 .atom
