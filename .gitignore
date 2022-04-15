@@ -22,6 +22,9 @@
 build/
 dist/
 
+## local dev stuff
+local/
+
 # IDE/Code specific
 .idea
 .atom
