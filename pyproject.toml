@@ -2,7 +2,7 @@
 name = "azurapy"
 version = "0.0.1"
 description = "Simple python API integration for AzuraCast: free and open-source self hosted web radio management suite"
-authors = ["Artem 'artctv' <artctvcode@gmail.con>"]
+authors = ["Artem 'artctv' <artctvcode@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
