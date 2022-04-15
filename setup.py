@@ -18,7 +18,7 @@ setup(
     author='Artem `artctv`',
     author_email='artctvcode@gmail.com',
     url='https://github.com/artctv/azurapy',
-    download_url='https://github.com/artctv/azurapy/archive/refs/tags/0.0.1.tar.gz',
+    download_url='https://github.com/artctv/azurapy/archive/refs/tags/v0.0.2.tar.gz',
     # project_urls={  # Optional
     #     "Bug Tracker": ""
     # },
