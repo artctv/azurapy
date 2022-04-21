@@ -11,6 +11,8 @@ httpx = "^0.22.0"
 
 [tool.poetry.dev-dependencies]
 commitizen = "^2.23.0"
+datamodel-code-generator = {extras = ["http"], version = "^0.11.20"}
+openapi-python-client = "^0.11.1"
 
 [tool.commitizen]
 name = "cz_conventional_commits"
