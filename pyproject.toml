@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "azurapy"
-version = "0.0.2"
-description = "Simple python API integration for AzuraCast: free and open-source self hosted web radio management suite"
+version = "0.0.3"
+description = "Unofficial python API integration for AzuraCast: free and open-source self hosted web radio management suite"
 authors = ["Artem 'artctv' <artctvcode@gmail.com>"]
 license = "MIT"
 
@@ -14,7 +14,7 @@ commitizen = "^2.23.0"
 
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "0.0.2"
+version = "0.0.3"
 tag_format = "v$version"
 
 [build-system]
