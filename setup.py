@@ -10,7 +10,7 @@ def get_long_description() -> str:
 setup(
     name='azurapy',  # should match the package folder
     packages=['azurapy'],  # should match the package folder
-    version='0.0.2',  # important for updates
+    version='0.0.3',  # important for updates
     license='MIT',  # should match your chosen license
     description='Unofficial python API integration for AzuraCast',
     long_description=get_long_description(),  # loads your README.md
