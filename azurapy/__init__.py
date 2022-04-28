@@ -1,4 +1,4 @@
-from .main import AzuraCastClient
+from .client import AzuraCastClient
 
 
 __title__ = "azurapy"
