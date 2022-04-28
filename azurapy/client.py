@@ -16,7 +16,7 @@ class AzuraCastClient:
         domain: str,
         api_key: Optional[str] = None,
         ssl_cert: Optional[Union[str, Path]] = None
-    ):
+    ) -> None:
         self.domain = domain
         self.api_key = api_key
         self.ssl_cert = ssl_cert

@@ -14,7 +14,7 @@ class Connector:
     _ssl_context: Union[SSLContext, bool]
     _client: httpx.Client
 
-    def __init__(self, azura_client: AzuraCastClient):  # todo: add httpx limits and timeout
+    def __init__(self, azura_client: AzuraCastClient) -> None:  # todo: add httpx limits and timeout
         self.azura_client = azura_client
         self._api_headers = self.set_up_api_headers(azura_client)
         self._ssl_context = self.set_up_ssl_context(azura_client)
@@ -41,6 +41,7 @@ class Connector:
         )
 
     def __call__(self) -> Connector_T:
+        #  raise AttributeError('Unavailable combination for `url`')
         return self
 
     def get(self):
