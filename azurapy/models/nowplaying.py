@@ -1,18 +1,26 @@
+from dataclasses import dataclass
+# from typing import Literal
 
 
-# def wrapper(func):
-#     def wrap(*args, **kwargs):
-#         print('mm')
-#         result = func(*args, **kwargs)
-#         print('ugu')
-#         print(result)
-#     return wrap
+# METHOD_T = Literal['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
 
 
-# @wrapper
-def get():
-    return '/nowplaying', 'GET'
+@dataclass
+class Request:
+    method: str
+    url: str
 
 
-def get_by_station(station_id: int):
-    return f'/nowplaying/{station_id}'
+def _kwargs(method: str, url: str) -> Request:
+    return Request(method=method, url=url)
+
+
+def get() -> Request:
+    return _kwargs('GET', '/nowplaying')
+
+
+def get_by_station(station_id: int) -> Request:
+    return _kwargs('GET', f'/nowplaying/{station_id}')
+
+
+

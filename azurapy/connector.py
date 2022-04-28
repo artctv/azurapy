@@ -29,7 +29,11 @@ class Connector:
 
     def __call__(self, data, *args, **kwargs):
         url, method = data[0], data[1]
+        print(data, args, kwargs)
         # print(f'{self.azura.domain}{url}')
-        r = self.client.request(method=method, url=f'{self.azura.domain}{url}')
-        print(r.json())
+        # r = self.client.request(method=method, url=f'{self.azura.domain}{url}')
+        # print(r.json())
         # self.client.get(url)
+        # if method == 'POST':
+        #     if attr is
+
