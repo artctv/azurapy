@@ -1,5 +1,6 @@
 from .client import AzuraCastClient
 from .connector import Connector
+from .api import api
 
 
 __title__ = "azurapy"
@@ -14,5 +15,6 @@ __all__ = [
     "__title__",
     "__version__",
     "AzuraCastClient",
-    "Connector"
+    "Connector",
+    "api"
 ]
