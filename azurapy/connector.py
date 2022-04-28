@@ -1,9 +1,12 @@
 from typing import Dict, TypeVar, Union
 from ssl import SSLContext
+from functools import partial
 import httpx
 from .client import AzuraCastClient
+from ._api.base import BaseApi
 
 Connector_T = TypeVar('Connector_T', bound='Connector')
+BaseApi_T = TypeVar('BaseApi_T', bound=BaseApi)
 
 
 class Connector:
@@ -12,7 +15,9 @@ class Connector:
 
     _api_headers: Union[Dict[str, str], Dict]
     _ssl_context: Union[SSLContext, bool]
-    _client: httpx.Client
+    _client: partial
+
+    __state: str
 
     def __init__(self, azura_client: AzuraCastClient) -> None:  # todo: add httpx limits and timeout
         self.azura_client = azura_client
@@ -33,19 +38,30 @@ class Connector:
         return False
 
     @staticmethod
-    def set_up_client(azura_client: AzuraCastClient, headers: dict, verify: Union[SSLContext, bool]) -> httpx.Client:
-        return httpx.Client(
+    def set_up_client(
+        azura_client: AzuraCastClient,
+        headers: dict,
+        verify: Union[SSLContext, bool]
+    ) -> partial:
+        return partial(
+            httpx.Client,
             base_url=azura_client.base_url,
             headers=headers,
             verify=verify
         )
 
-    def __call__(self) -> Connector_T:
-        #  raise AttributeError('Unavailable combination for `url`')
+    def __call__(self, api: BaseApi_T) -> Connector_T:
+        if not api._check():  # noqa
+            raise AttributeError('Unavailable combination for `api`')
+        self.__state = api._compile()  # noqa
         return self
 
-    def get(self):
-        pass
+    def get(self) -> dict:
+        with self._client() as client:
+            client: httpx.Client
+            r = client.get(self.__state)
+        self.__state = ''
+        return r.json()
 
     def post(self):
         pass
@@ -60,4 +76,4 @@ class Connector:
         pass
 
     def __del__(self):
-        self._client.close()
+        self._client().close()
