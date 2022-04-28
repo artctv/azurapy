@@ -4,7 +4,7 @@ from .connector import Connector
 
 __title__ = "azurapy"
 __description__ = """
-    Simple python API integration for AzuraCast:
+    Unofficial python API integration for AzuraCast:
     free and open-source self hosted web radio management suite
 """
 __version__ = "0.0.1"
