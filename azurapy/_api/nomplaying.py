@@ -11,6 +11,7 @@ class NowPlaying(BaseApi):
     _variations = (
         ('nowplaying',),
     )
+    _content_type: str = 'JSON'
 
     def nowplaying(self, station_id: Union[int, str] = '') -> NowPlaying_T:
         self._add('nowplaying', station_id)

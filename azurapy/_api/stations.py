@@ -12,6 +12,7 @@ class Stations(BaseApi):
         ('station',),
         ('stations',)
     )
+    _content_type: str = 'JSON'
 
     def station(self, station_id: int) -> Stations_T:
         self._add('station', station_id)

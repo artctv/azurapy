@@ -11,6 +11,8 @@ class AbstractApi(ABC):
     @abstractmethod
     def _variations(self) -> Tuple[Tuple[str]]: pass
 
+    @abstractmethod
+    def _content_type(self) -> str: pass
 
 
 class BaseApi(AbstractApi):  # noqa
@@ -30,10 +32,13 @@ class BaseApi(AbstractApi):  # noqa
             return True
         return False
 
-    def _compile(self) -> str:
+    def _compile(self) -> tuple:
         url = ''
         for key, value in self._cache.items():
             url = f'{url}/{key}'
             if value:
                 url = f'{url}/{value}'
-        return url
+        return url, self._content_type
+
+    def __str__(self):
+        return self._compile()

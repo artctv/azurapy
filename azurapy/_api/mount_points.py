@@ -13,6 +13,7 @@ class MountPoints(BaseApi):
         ('station', 'mounts'),
         ('station', 'mount')
     )
+    _content_type: str = 'JSON'
 
     def station(self, station_id: int) -> MountPoints_T:
         self._add('station', station_id)
